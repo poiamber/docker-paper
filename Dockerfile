@@ -7,8 +7,8 @@ ARG PAPER_URL=https://yivesmirror.com/grab/paperspigot/PaperSpigot-latest.jar
 WORKDIR /data
 ADD "${PAPER_URL}" /srv/PaperSpigot-latest.jar
 RUN cd /srv && \
-    mv PaperSpigot-latest.jar paper.jar
-    java -jar paper.jar --version && \
+    mv PaperSpigot-latest.jar paper.jar && \
+    java -jar paper.jar --version  && \
     chmod 444 /srv/paper.jar
 
 ADD runPaper.sh /usr/local/bin/paper

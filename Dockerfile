@@ -1,13 +1,13 @@
 FROM openjdk:8-jre
 
-# 1.11.2: latest build
+# 1.12.2: current build
+# b1618 December 27, 2019
 
-ARG PAPER_URL=https://yivesmirror.com/grab/paperspigot/PaperSpigot-latest.jar
+ARG PAPER_URL=https://yivesmirror.com/files/paper/Paper-1.12.2-b1618.jar
 
 WORKDIR /data
-ADD "${PAPER_URL}" /srv/PaperSpigot-latest.jar
+ADD "${PAPER_URL}" /srv/paper.jar
 RUN cd /srv && \
-    mv PaperSpigot-latest.jar paper.jar && \
     chmod 444 /srv/paper.jar
 
 ADD runPaper.sh /usr/local/bin/paper
